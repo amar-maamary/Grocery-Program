@@ -6,7 +6,9 @@ groceries = {
     "bread": 2
 }
 
-shopping_cart = []
+shopping_cart = {
+
+}
 
 total = 0
 
@@ -16,7 +18,7 @@ item_data = user_choice.split(" ")
 
 while item_data[0] != "done":
     if item_data[0] in groceries:
-        shopping_cart.append(item_data[0])
+        shopping_cart[item_data[0]] = item_data[1]
         total += groceries[item_data[0]] * int(item_data[1])
     else:
         print("Sorry, we don't have that item.")
