@@ -12,15 +12,17 @@ total = 0
 
 # Filling the shopping cart 
 user_choice = input("What do you want to buy? ")
+item_data = user_choice.split(" ") 
 
-while user_choice != "done":
-    if user_choice in groceries:
-        shopping_cart.append(user_choice)
-        total += groceries[user_choice]
+while item_data[0] != "done":
+    if item_data[0] in groceries:
+        shopping_cart.append(item_data[0])
+        total += groceries[item_data[0]] * int(item_data[1])
     else:
         print("Sorry, we don't have that item.")
     
     user_choice = input("What do you want to buy? ")
+    item_data = user_choice.split(" ") 
 
 print("You bought:", shopping_cart)
 print("Total = $", total)
