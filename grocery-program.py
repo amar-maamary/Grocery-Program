@@ -8,15 +8,23 @@ groceries = {
 
 shopping_cart = []
 
+total = 0
+
 # Filling the shopping cart 
 user_choice = input("What do you want to buy? ")
 
 while user_choice != "done":
     if user_choice in groceries:
         shopping_cart.append(user_choice)
+        total += groceries[user_choice]
     else:
         print("Sorry, we don't have that item.")
     
     user_choice = input("What do you want to buy? ")
 
 print("You bought:", shopping_cart)
+print("Total = $", total)
+if total > 10:
+    print("You spent a lot!")
+else:
+    print("You spent a little!")
